@@ -1,7 +1,7 @@
 import logging
 import warnings
 
-import pytorch_lightning as pl
+import pytorch_lightning
 
 # make core features and version number accessible
 from ._version import __version__  # noqa: F401
@@ -12,7 +12,7 @@ from .uncertainty import uncertainty_evaluate  # noqa: F401
 from .utils import load, save, set_log_level, set_random_seed  # noqa: F401
 
 # Reduce lightning logs
-warnings.simplefilter(action="ignore", category=pl.utilities.warnings.PossibleUserWarning)
+warnings.simplefilter(action="ignore", category=pytorch_lightning.utilities.warnings.PossibleUserWarning)
 logging.getLogger("pytorch_lightning").setLevel(logging.WARNING)
 
 log = logging.getLogger("NP")
